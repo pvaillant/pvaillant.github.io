@@ -1,0 +1,4 @@
+pretzel: 
+    engine: liquid
+baseurl: "http://paul.vaillant.ca"
+title: "Paul's UC and Dev/Ops Blog"

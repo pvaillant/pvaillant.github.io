@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+	<title>{{ page.title }}</title>
+	<meta content="en-us" http-equiv="Content-Language" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="/assets/favicon.ico" />
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/assets/css/bootstrap-3.3.2.min.css" />
+	<link rel="stylesheet" href="/assets/css/font-awesome-4.3.0.min.css" />
+	<link rel="stylesheet" href="/assets/css/site.css" />
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Blog Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Blog Feed" />
+</head> 
+
+<body>
+	<header class="header">
+		<div class="container">
+			<img class="profile-image img-responsive pull-left" src="/assets/images/profile.png" alt="Paul Vaillant" height="85" width="85" />
+			<div class="profile-content pull-left">
+				<h1 class="name"><a href="/">Paul's UC &amp; Dev/Ops Blog</a></h1>
+				<!-- <h2 class="desc">...</h2> -->
+				<ul class="social list-inline">
+					<li><a href="https://twitter.com/paulvaillant"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/paulvaillant"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/pvaillant"><i class="fa fa-github-alt"></i></a></li>
+					<li><a href="/rss.xml"><i class="fa fa-rss"></i></a></li>
+				</ul> 
+			</div>
+		</div>
+	</header>
+	
+	<div class="container sections-wrapper">
+		<div class="row">
+			<div class="primary col-md-8 col-sm-12 col-xs-12">
+				<section class="section">
+					<div class="section-inner">
+						<div class="content">
+							{{content}}
+						</div>
+					</div>
+				</section>
+			</div>
+			
+			<div class="secondary col-md-4 col-sm-12 col-xs-12">
+				<aside class="about aside section">
+					<div class="section-inner">
+						<h2 class="heading">About Me</h2>
+						<div class="content">
+							<p>Just a guy who writes software and makes cool products. Working hard every day to create things people love and want. Interested in telecom, web, mobile, embedded, green tech and beer.</p>
+							<!-- <p><a href="https://about.me/paulvaillant">About Me</a></p> -->
+						</div>
+					</div>
+				</aside>
+
+				<aside class="blog aside section">
+					<div class="section-inner">
+						<h3>Latest Posts</h3>
+						<ul>
+						{% for post in site.posts limit:5 %}
+							<li><p><a href="{{ post.url }}">{{ post.title }}</a> &mdash; {{ post.date | date: "%b %d, %Y" }}</p></li>
+						{% endfor %}
+						</ul>
+						
+						<h3>Older Posts</h3>
+						<ul>
+						{% assign cnt2015 = 0 %}{% for page in (site.posts | where: "year","2015") %}{% capture cnt2015 %}{{ cnt2015 | plus:1 }}{% endcapture %}{% endfor %}
+							<li><a href="/2015.html">2015 ({{ cnt2015 }})</a></li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div>
+	
+	<footer class="footer">
+		<div class="container text-center">
+			<small class="copyright">Design based on <a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank">Developer</a> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a>. 
+				Content &copy; 2015 Paul Vaillant</small>
+		</div>
+	</footer>
+ 
+	<!--
+	<script type="text/javascript" src="/assets/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/bootstrap-3.3.2.min.js"></script>
+	-->
+	<script type="text/javascript">
+		var disqus_shortname = 'paulvaillant';
+		(function () {
+			var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
+</body>
+</html>
