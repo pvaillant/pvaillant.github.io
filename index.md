@@ -8,11 +8,14 @@ title : Paul's UC and Dev/Ops Blog
   <div class="entry-container">
     <div class='entry'>
       <h2><a href="{{ post.url }}">{{post.title}}</a></h2>
-      <span class="postdate">{{ post.date | date: "%e %B, %Y"  }}
+      <p class="postdate">{{ post.date | date: "%e %B, %Y"  }}</p>
+      {%if post.tags %}
+      <p class="tags">Tags:
         {% for tag in post.tags %}
-          <li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
+            <a href="/tag/{{ tag }}.html">{{ tag }}</a> {% unless forloop.last %} | {% endunless %}
         {% endfor %}
-      </span>
+      </p>
+      {% endif %}
       {{ post.content }}
     </div>
   </div>
