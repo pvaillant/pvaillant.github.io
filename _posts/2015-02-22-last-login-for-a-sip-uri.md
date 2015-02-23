@@ -76,7 +76,7 @@ $ds.Tables[0] | sort RegisterTime -Descending | select -Last 10
 
 </code></pre>
 
-You can actually download this SQL that uses a version of this PowerShell (with nice parameters and Lync 2010/2013 database detection) to run it against all Monitoring databases: ([Get-LyncLogins.ps1](/Content/Get-LyncLogins.ps1)). Just drop it on a machine with the Lync PowerShell module and run it as a user that has access to the LcsCDR database (CSAdministrator member).
+You can actually download this SQL that uses a version of this PowerShell (with nice parameters and Lync 2010/2013 database detection) to run it against all Monitoring databases: ([Get-LyncLogins.ps1](/content/Get-LyncLogins.ps1)). Just drop it on a machine with the Lync PowerShell module and run it as a user that has access to the LcsCDR database (CSAdministrator member).
 
 	Get-LyncLogins.ps1 -UserUri john.doe@domain.com -Last 10
 
