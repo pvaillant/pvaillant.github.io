@@ -169,7 +169,6 @@ iframe {
 /* ======= Sections======= */
 .sections-wrapper {
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 .section .section-inner {
   background: #fff;
@@ -185,7 +184,7 @@ iframe {
   margin-right: 5px;
   font-size: 14px;
 }
-.aside {
+.aside, .primary {
   margin-bottom: 30px;
 }
 /* ======= Footer ======= */
@@ -205,6 +204,9 @@ iframe {
 .footer .fa-heart {
   color: #fb866a;
 }
+
+.notfound p img { width: 100% }
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
   .header {

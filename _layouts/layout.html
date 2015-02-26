@@ -44,7 +44,7 @@
 	<div class="container sections-wrapper">
 		<div class="row">
 			<div class="primary col-md-8 col-sm-12 col-xs-12">
-				<section class="section">
+				<section class="section{% if page.url == "/404.html" %} notfound{% endif %}">
 					<div class="section-inner">
 						<div class="content">
 							{{content}}
