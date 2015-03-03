@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : sql posts - Paul's UC and Dev/Ops Blog
+title : sql posts
 ---
 
 <h2>Posts tagged with sql</h2>

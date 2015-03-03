@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : uControl posts - Paul's UC and Dev/Ops Blog
+title : uControl posts
 ---
 
 <h2>Posts tagged with uControl</h2>

@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : projects posts - Paul's UC and Dev/Ops Blog
+title : projects posts
 ---
 
 <h2>Posts tagged with projects</h2>

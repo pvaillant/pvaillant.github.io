@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : NuGet posts - Paul's UC and Dev/Ops Blog
+title : NuGet posts
 ---
 
 <h2>Posts tagged with NuGet</h2>

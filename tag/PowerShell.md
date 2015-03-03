@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : PowerShell posts - Paul's UC and Dev/Ops Blog
+title : PowerShell posts
 ---
 
 <h2>Posts tagged with PowerShell</h2>

@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : Lync posts - Paul's UC and Dev/Ops Blog
+title : Lync posts
 ---
 
 <h2>Posts tagged with Lync</h2>

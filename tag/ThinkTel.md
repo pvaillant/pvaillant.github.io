@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : ThinkTel posts - Paul's UC and Dev/Ops Blog
+title : ThinkTel posts
 ---
 
 <h2>Posts tagged with ThinkTel</h2>

@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : LcsCDR posts - Paul's UC and Dev/Ops Blog
+title : LcsCDR posts
 ---
 
 <h2>Posts tagged with LcsCDR</h2>
