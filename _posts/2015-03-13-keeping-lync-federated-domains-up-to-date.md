@@ -19,15 +19,15 @@ You can use PowerShell to parse out the event log entries and call New-CsAllowed
 
 **Option 1**: run on the Edge server and generate a script that you can run on the Front End. You can either use the -GUI option to get an interface that let's you pick which domains to include in the script, or you can have the domains returned as PowerShell objects, filter them and use Update-LyncFederatedDomains to write them out to a script.
 
-**Example 1a**: <pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 -GUI</code></pre>
+<pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 -GUI</code></pre>
 
-**Example 1b**: <pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 | where Domain -match '.com$' | Update-LyncFederatedDomains.ps1 -FilePath .\path\to\front-end-script.ps1</code></pre>
+<pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 | where Domain -match '.com$' | Update-LyncFederatedDomains.ps1 -FilePath .\path\to\front-end-script.ps1</code></pre>
 
 **Option 2**: run it on a machine like the Front-End that can call New-CsAllowedDomain. You have the same option as above to either use a GUI or to use the command line, but you'll probably need to specify credentials to connect to the Edge server using -Credential. The script will attempt to automatically detect the Edge server, but if you want to force it, use -EdgeServer. In the second example below, it will take all discovered domains and try to call New-CsAllowedDomain in the generated script.
 
-**Example 2a**: <pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 -GUI -EdgeServer my-edge.acme.com -Credential $(Get-Credential)</code></pre>
+<pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 -GUI -EdgeServer my-edge.acme.com -Credential $(Get-Credential)</code></pre>
 
-**Example 2b**: <pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 -Credential $(Get-Credential) -FilePath .\path\tp\front-end-script.ps1</code></pre>
+<pre><code class="hljs powershell">Update-LyncFederatedDomains.ps1 -Credential $(Get-Credential) -FilePath .\path\tp\front-end-script.ps1</code></pre>
 
 In the case where you use -GUI, you'll need to click the _Save_ button to generate the file. Then, whether you ran -GUI or used -FilePath, run the generated script and good bye rate limiting messages!
 
