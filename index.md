@@ -11,7 +11,7 @@ title : Paul's UC and Dev/Ops Blog
       <p class="postdate">{{ post.date | date: "%e %B, %Y"  }}</p>
       {%if post.tags %}
       <p class="tags">Tags:
-        {% for tag in post.tags %}
+        {% for tag in (post.tags | sort) %}
             <a href="/tag/{{ tag }}.html">{{ tag }}</a> {% unless forloop.last %} | {% endunless %}
         {% endfor %}
       </p>
