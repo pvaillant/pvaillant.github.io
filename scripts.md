@@ -9,3 +9,4 @@ These are the various scripts that I write and talk about on my blog. They're he
 
  * [Get-LyncConferenceAdoption.ps1](/content/Get-LyncConferenceAdoption.ps1) (see [Measuring Lync Conference Adoption]({% post_url 2015-03-03-measuring-lync-conference-adoption %}))
  * [Get-LyncLogins.ps1](/content/Get-LyncLogins.ps1) (see [Last Login for a SIP URI]({% post_url 2015-02-22-last-login-for-a-sip-uri %}))
+ * [Update-LyncFederatedDomains.ps1](/content/Update-LyncFederatedDomains.ps1) (see [Keeping Lync Federated Domains Up To Date]({% post_url 2015-03-13-keeping-lync-federated-domains-up-to-date %}))
