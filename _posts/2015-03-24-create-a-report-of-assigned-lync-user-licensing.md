@@ -69,7 +69,7 @@ SELECT Doc.Name,Item.Data FROM [Item] Item join Document Doc on Item.DocId = Doc
 
 You can then deserialize the returned XML and you have exactly the same value as from Get-CsConferencingPolicy.
 
-Lastly you can get all the Lync objects from Active Directory as well. I like to use the query _(|(msRTCSIP-Line=\*)(msRTCSIP-PrimaryUserAddress=\*))_ since it returns *all* Lync objects but you could further filter by objectClass if you wanted only users. The attribute _msRTCSIP-UserPolicies_ (which is a multi-value attribute) contains values in the form of [policyNumber]=[policyID]. The [policyNumber] for the conferencing policy is 1 so you just need to find the value that start with 1=. If there isn't one, then the global or site policy apply.
+Lastly you can get all the Lync objects from Active Directory as well. I like to use the query _(\|(msRTCSIP-Line=\*)(msRTCSIP-PrimaryUserAddress=\*))_ since it returns *all* Lync objects but you could further filter by objectClass if you wanted only users. The attribute _msRTCSIP-UserPolicies_ (which is a multi-value attribute) contains values in the form of [policyNumber]=[policyID]. The [policyNumber] for the conferencing policy is 1 so you just need to find the value that start with 1=. If there isn't one, then the global or site policy apply.
 
 You can download a version I wrote in pure PowerShell that demonstrates this concept. The nice thing about PowerShell is that it's so very close to .NET that it makes experimenting with things like this very easy. If anyone is interested let me know and maybe I'll create a .NET library that does the above.
 
