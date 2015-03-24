@@ -7,7 +7,8 @@ title : Scripts
 
 These are the various scripts that I write and talk about on my blog. They're here instead of in separate repositories because they are more one-off scripts but since my blog is on [GitHub](https://github.com/pvaillant/pvaillant.github.io), if you have ideas (feature improvements, optimizations, etc) or see a bug, feel free to [open a ticket](https://github.com/pvaillant/pvaillant.github.io/issues/new) and I'd be happy to take a look.
 
- * [Get-LyncConferenceAdoption.ps1](/content/Get-LyncConferenceAdoption.ps1) (see [Measuring Lync Conference Adoption]({% post_url 2015-03-03-measuring-lync-conference-adoption %}))
- * [Get-LyncLogins.ps1](/content/Get-LyncLogins.ps1) (see [Last Login for a SIP URI]({% post_url 2015-02-22-last-login-for-a-sip-uri %}))
- * [Get-LyncNumbers.ps1](/content/Get-LyncNumbers.ps1) (see [Managing Your Lync Phone Numbers]({% post_url 2015-03-18-managing-your-lync-phone-numbers %}))
- * [Update-LyncFederatedDomains.ps1](/content/Update-LyncFederatedDomains.ps1) (see [Keeping Lync Federated Domains Up To Date]({% post_url 2015-03-13-keeping-lync-federated-domains-up-to-date %}))
+ * [Get-LyncConferenceAdoption.ps1](/content/Get-LyncConferenceAdoption.ps1) (see [Measuring Lync Conference Adoption](/2015/03/03/measuring-lync-conference-adoption))
+ * [Get-LyncLogins.ps1](/content/Get-LyncLogins.ps1) (see [Last Login for a SIP URI](/2015/02/22/last-login-for-a-sip-uri))
+ * [Get-LyncNumbers.ps1](/content/Get-LyncNumbers.ps1) (see [Managing Your Lync Phone Numbers](/2015/03/18/managing-your-lync-phone-numbers))
+ * [Get-LyncUserLicensing.ps1](/content/Get-LyncUserLicensing.ps1) (see [Create a Report of Assigned Lync User Licensing](/2015/03/24/create-a-report-of-assigned-lync-user-licensing.html))
+ * [Update-LyncFederatedDomains.ps1](/content/Update-LyncFederatedDomains.ps1) (see [Keeping Lync Federated Domains Up To Date](/2015/03/13/keeping-lync-federated-domains-up-to-date.html))

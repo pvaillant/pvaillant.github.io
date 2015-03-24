@@ -206,6 +206,7 @@ iframe {
 }
 
 .notfound p img { width: 100% }
+.download { font-size: 150%; /*display:block; width: 100%;*/ text-align: center }
 
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
