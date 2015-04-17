@@ -19,4 +19,6 @@ It runs as a scheduled task on any machine that has the Lync PowerShell module i
 
 In addition to the configuration data, it can also keep track of user data (contacts, conferences, etc). It keeps these in one file per user and is extremely handy if someone deletes contacts by accident or if a user is disabled accidentally. It's amazing how fast Disable-CsUser will purge out all the users data.
 
-Give it a try and let me know what you think. You can download it from the link above. 
+Give it a try and let me know what you think.
+
+<a class="download" href="https://raw.githubusercontent.com/ThinkTel/Backup-Lync/master/Backup-Lync.ps1"><i class="fa fa-file-text-o"></i> Backup-Lync.ps1 <i class="fa fa-download"></i></a>

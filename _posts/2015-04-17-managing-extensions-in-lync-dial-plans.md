@@ -113,4 +113,5 @@ $oldExts | foreach {
 </code></pre>
 
 If you have the need to manage extensions, download this script today!
+
 <a class="download" href="/content/Update-LyncExtensionDialing.ps1"><i class="fa fa-file-text-o"></i> Update-LyncExtensionDialing.ps1 <i class="fa fa-download"></i></a>

@@ -102,4 +102,6 @@ This returns all users who hosted conferences, along with how many conferences t
 
 Since both of these are dependant on the LcsCDR data, they are both subject to the standard warning that the time period you're able to retrieve is set by the retention period of the cdr configuration (maybe I should have post just on that...). Once nice thing is these SQL scripts are compatible with both Lync 2010 and 2013.
 
-Like many of my other SQL scripts, I also have a PowerShell script for this: [Get-LyncConferenceAdoption.ps1](/content/Get-LyncConferenceAdoption.ps1). In case you're wondering, I like the PowerShell script version mainly so I never have to open the SQL Management Studio to run it. It's also nice to be able to use PowerShell to dive into the data and slice is up on the fly. Plus you can easily export it to Excel with [Export-CSV](https://technet.microsoft.com/en-us/library/hh849932.aspx).
+Like many of my other SQL scripts, I also have a PowerShell script for this. In case you're wondering, I like the PowerShell script version mainly so I never have to open the SQL Management Studio to run it. It's also nice to be able to use PowerShell to dive into the data and slice is up on the fly. Plus you can easily export it to Excel with [Export-CSV](https://technet.microsoft.com/en-us/library/hh849932.aspx).
+
+<a class="download" href="/content/Get-LyncConferenceAdoption.ps1"><i class="fa fa-file-text-o"></i> Get-LyncConferenceAdoption.ps1 <i class="fa fa-download"></i></a>

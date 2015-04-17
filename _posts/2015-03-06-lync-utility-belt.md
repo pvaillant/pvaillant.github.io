@@ -24,6 +24,8 @@ So why call it the Lync Utility Belt?
 
 Well, where would Batman be without his...
 
-Check it out: [source code](https://github.com/pvaillant/LyncUtilityBelt) is on GitHub and you can also download the [binary](https://github.com/pvaillant/LyncUtilityBelt/releases/download/v1.0.0/LyncUtilityBelt-1.0.0.zip). You'll need .NET 4.5+.
+Check it out on GitHub [LyncUtilityBelt](https://github.com/pvaillant/LyncUtilityBelt) you can also download the binary below. You'll need .NET 4.5+.
+
+<a class="download" href="https://github.com/pvaillant/LyncUtilityBelt/releases/download/v1.0.0/LyncUtilityBelt-1.0.0.zip"><i class="fa fa-file-text-o"></i> LyncUtilityBelt-1.0.0.zip <i class="fa fa-download"></i></a>
 
 BTW: On-air light picture is from [http://www.freeimages.com/photo/190552](http://www.freeimages.com/photo/190552)

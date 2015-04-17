@@ -49,6 +49,8 @@ New-CsAnnouncement -identity $(Get-CsService -ApplicationServer | select -first 
 
 With all that information, it's just a little [set math](http://en.wikipedia.org/wiki/Set_\(mathematics\)) to find the entries we need to add and remove.
 
-Like always, you can download this script [Update-LyncUnassignedNumbers.ps1](/content/Update-LyncUnassignedNumbers.ps1).
+Like always, you can download this script 
+
+<a class="download" href="/content/Update-LyncUnassignedNumbers.ps1"><i class="fa fa-file-text-o"></i> Update-LyncUnassignedNumbers.ps1 <i class="fa fa-download"></i></a>
 
 Keep in mind that because unassigned numbers are processed last in the Lync routing, we don't have to worry about removing an unassigned number if you assign it to a user or contact in Lync. If you really want to, say because you really want to keep your unassigned numbers purely for unassigned numbers, take solace: you are not alone. There is an option in the script above (-Force) that will do just that.
