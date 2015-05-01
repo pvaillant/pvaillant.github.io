@@ -17,7 +17,7 @@
 	This will update the RedmondOffice dial plan. 
 	
 .NOTES
-	Version 1.0.0 (2015-04-17)
+	Version 1.0.1 (2015-05-01)
 	Written by Paul Vaillant
 	
 .LINK
@@ -54,7 +54,7 @@ $users | where LineURI -match ';ext=' | foreach {
 		# seen this before multiple times
 		$assignedDups[$ext].Add($line)
 	}
-	else if($assignedExts.ContainsKey($ext)) {
+	elseif($assignedExts.ContainsKey($ext)) {
 		# this is the second time we've seen this extension
 		# create a list of duplicates; the first one and this one
 		$dups = new-object 'system.collections.generic.list[string]' @($assignedExts[$ext],$line)
@@ -94,8 +94,8 @@ $rules | foreach {
 ###############################################################################
 ## Create a delta (adds / updates / deletes)
 ###############################################################################
-$assignedKeys = $assignedExts.Keys
-$currentKeys = $currentExts.Keys
+[array]$assignedKeys = $assignedExts.Keys
+[array]$currentKeys = $currentExts.Keys
 
 # adds = assigned keys - current keys
 $newExts = $assignedKeys | where { $currentKeys -notcontains $_ }
@@ -106,7 +106,7 @@ $oldExts = $currentKeys | where { $assignedKeys -notcontains $_ }
 Write-Verbose "$($oldExts.count) old extensions"
 
 # updates = existing current keys that don't match assigned keys
-$setExts = $assignedKeys | where { $currentKeys -contains $_ -and $assignedExts[$_] -ne $currentKeys[$_][0] }
+$setExts = $assignedKeys | where { $currentKeys -contains $_ -and $assignedExts[$_] -ne $currentExts[$_][0] }
 Write-Verbose "$($setExts.count) updated extensions"
 
 ###############################################################################
@@ -116,17 +116,18 @@ $batch = Get-Date -Format "yyyy-MM-dd HH:mm"
 
 # new-csvoicenormalizationrule w/ date as description
 $newExts | foreach {
-	New-CsVoiceNormalizationRule -Identity "$DialPlan/$NormalizationRulePrefix $_" -Pattern $('^' + $_ + '$') -Translation $assignedExts[$_] -Description "Created $batch" -Confirm:$false
-}
+	New-CsVoiceNormalizationRule -Identity "$DialPlan/$NormalizationRulePrefix $_" -Pattern $('^' + $_ + '$') `
+		-Translation $assignedExts[$_] -Description "Created $batch" -Confirm:$false -IsInternalExtension $true
+} | Out-Null
 
 # set-csvoicenormalizationrule w/ date as description
 $setExts | foreach {
 	$rule = $currentKeys[$_][1]
 	Set-CsVoiceNormalizationRule -Identity $rule -Translation $assignedExts[$_] -Description "Updated $batch" -Confirm:$false
-}
+} | Out-Null
 
 # remove-csvoicenormalizationrule
 $oldExts | foreach {
 	$rule = $currentKeys[$_][1]
 	Remove-CsVoiceNormalizationRule -Identity $rule -Confirm:$false
-}
+} | Out-Null
