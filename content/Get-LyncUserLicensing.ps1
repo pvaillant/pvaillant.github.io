@@ -1,8 +1,27 @@
+<#
+.SYNOPSIS
+	Queries Active Directory and returns a list of required licensing detected for each enabled Lync user.
+
+.OUTPUTS
+	Returns a PSCustomObject for each user with the following properties:
+	Identity, lyncStandardCAL, lyncEnterpriseCAL, lyncPlusCAL, exchangeStandardCAL, exchangeEnterpriseCAL
+
+.EXAMPLES
+	Get-LyncUserLicensing.ps1 | measure lyncStandardCAL,lyncEnterpriseCAL,lyncPlusCAL | group Property | select Name,@{n='Count';e={$_.Group[0].Count}}
+	This will get all the individual user licensing and count the number of each of the types of Lync CALs and return a summary count for each CAL type.
+
+.NOTES
+	Version 1.0.0 (2015-03-24)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Get-LyncUserLicensing.html
+#>
+
 [CmdletBinding()]
 param ()
 # FUTURE: add a parameter so that we can request licensing for a specific user
 #	[Parameter(ValueFromPipeline=$true,Mandatory=$true)][array]$Identity
-
 
 # find the AD object with class=msRTCSIP-GlobalTopologySetting and read msRTCSIP-BackEndServer
 $rootdse = [adsi]"LDAP://RootDSE"

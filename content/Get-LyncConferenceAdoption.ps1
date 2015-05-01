@@ -1,3 +1,19 @@
+<#
+.SYNOPSIS
+	Get Lync conferencing adoption statistics from the monitoring database(s).
+	
+.OUTPUTS
+	For each user who hosted a conference, there's a DataRow with the following properties:
+	UserUri, HostingCount, MinAttendeeCount, AvgAttendeeCount, MaxAttendeeCount, ParticipantCount
+	
+.NOTES
+	Version 1.0.0 (2015-03-03)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Get-LyncConferenceAdoption.html
+#>
+
 [CmdletBinding()]
 param()
 

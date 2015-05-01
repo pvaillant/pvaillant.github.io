@@ -1,3 +1,39 @@
+<#
+.SYNOPSIS
+	Keeps unassigned number entries current with all numbers available on the SIP Trunk
+	
+.PARAMETER SipPilotNumber
+	10 digit SIP Trunk pilot number
+
+.PARAMETER Credential
+	PSCredential object (like returned from Get-Credential) for the SipPilotNumber
+
+.PARAMETER IncludeNumberTranslations
+	Include number translations in the report. This will significantly slow down the report.
+
+.PARAMETER Announcement
+	The announcement to use for any new unassigned number entries that are created
+
+.PARAMETER Force
+	Removes unused unassigned number entries
+	
+.EXAMPLE
+	Update-LyncUnassignedNumbers.ps1 -SipPilotNumber 7005551212 -Announcement "number-unassigned"
+	This will prompt for credentials for the SIP trunk, connect and create any missing unassigned number entries using the announcement "number-unassigned".
+	
+.EXAMPLE
+	Update-LyncUnassignedNumbers.ps1 -SipPilotNumber 7005551212 -Announcement $(Get-CsAnnouncement -Identity "number-unassigned")
+	
+	Same as above but uses the announcement object instead of looking up the announcement.
+	
+.NOTES
+	Version 1.0.0 (2015-04-10)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Update-LyncUnassignedNumbers.html
+#>
+
 [CmdletBinding()]
 param(
 	[Parameter(Mandatory=$true)][ValidateRange(1000000000,9999999999)][long]$SipPilotNumber,

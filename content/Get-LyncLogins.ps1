@@ -1,3 +1,32 @@
+<#
+.SYNOPSIS
+	Get a list of the last X number of logins for a user
+	
+.PARAMETER UserUri
+	The SIP address of the user to return logins for
+
+.PARAMETER Last
+	Number of last logins to return
+
+.OUTPUTS
+	For each login, there's a DataRow with the following properties:
+	RegisterTime, DeRegisterTime, DeRegisterReason, ClientVersion, ResponseCode,
+	Registrar, Pool, EdgeServer, MacAddress, Manufacturer, HardwareVersion
+	
+	If the monitoring server is 2013, there's also an IpAddress property
+
+.EXAMPLE
+	Get-LyncLogins.ps1 -UserUri john.doe@example.com
+	Get the last 10 logins for john.doe@example.com
+	
+.NOTES
+	Version 1.0.0 (2015-02-22)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Get-LyncLogins.html
+#>
+
 [CmdletBinding()]
 param(
 	[Parameter(Mandatory=$true,Position=0)][string]$UserUri,

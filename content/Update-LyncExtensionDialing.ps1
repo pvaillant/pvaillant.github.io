@@ -1,3 +1,29 @@
+<#
+.SYNOPSIS
+	Updates a Lync dial plan to include normalization rules for all users with assigned extensions.
+	
+.PARAMETER DialPlan
+	Identity of the DialPlan to update
+
+.PARAMETER NormalizationRulePrefix
+	Prefix used to identify normalization rules to be managed
+
+.EXAMPLE
+	Update-LyncExtensionDialing.ps1
+	It's so straight forward, you don't need any parameters
+
+.EXAMPLE
+	Update-LyncExtensionDialing.ps1 -DialPlan RedmondOffice
+	This will update the RedmondOffice dial plan. 
+	
+.NOTES
+	Version 1.0.0 (2015-04-17)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Get-LyncExtensionDialing.html
+#>
+
 [CmdletBinding()]
 param(
 	[string]$DialPlan = "Global",

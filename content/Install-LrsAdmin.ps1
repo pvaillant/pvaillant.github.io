@@ -1,4 +1,39 @@
-# SEE http://technet.microsoft.com/en-us/library/dn436324.aspx
+<#
+.SYNOPSIS
+	Downloads and installs Lync Room System admin web interface, along with all dependencies. 
+	
+.PARAMETER LrsAppUser
+	Name of the user who the app will run as. This user will be created if it doesn't exist.
+
+.PARAMETER LrsAppUserOU
+	Active Directory OU to create the user in. This must already exist.
+
+.PARAMETER LrsSupportAdminGroup
+	Name of the group that will get read-only support role assigned. This group will be created if it doesn't exist.
+
+.PARAMETER LrsSupportAdminGroupOU
+	Active Directory OU to create the group in. This must already exist.
+
+.PARAMETER LrsFullAccessAdminGroup
+	Name of the group that will get full admin role assigned. This group will be created if it doesn't exist.
+
+.PARAMETER LrsFullAccessAdminGroupOU
+	Active Directory OU to create the group in. This must already exist.
+
+.PARAMETER PoolName
+	Name of the Lync pool the LrsAppUser will be enabled in. This will be auto-detected if it isn't specified.
+
+.PARAMETER SipDomain
+	SIP Domain to assign to LrsAppUser when it's enabled for Lync.
+	
+.NOTES
+	Version 1.0.0 (2015-01-05)
+	Written by Paul Vaillant
+	http://technet.microsoft.com/en-us/library/dn436324.aspx
+	
+.LINK
+	http://paul.vaillant.ca/help/Install-LrsAdmin.html
+#>
 
 [CmdletBinding()]
 param(

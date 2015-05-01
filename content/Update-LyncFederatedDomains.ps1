@@ -1,3 +1,46 @@
+<#
+.SYNOPSIS
+	Updates allowed and blocked federated domains based on Edge event log entries.
+	
+.PARAMETER GUI
+	If specified, display domains extracted from event log using a GUI
+
+.PARAMETER FilePath
+	File path for resulting script with allowed and blocked domain statements
+
+.PARAMETER EdgeServer
+	FQDN of edge server to connect to
+	
+.PARAMETER Credential
+	Credentials to use to connect to edge server
+
+.INPUTS
+	Exactly the same as the outputs
+
+.OUTPUTS
+	An array of PSCustomObjects with the following properties:
+	Domain, ProxyFqdn, RateLimited, Comment, Action, EdgeServer
+
+.EXAMPLE
+	Update-LyncFederatedDomains.ps1 -GUI 
+	Connect to either the localhost (if it is an edge server) or to the auto-detected edge server (using Get-CsPool)
+
+.EXAMPLE
+	Update-LyncFederatedDomains.ps1 -EdgeServer "edge.domain.local" -Credential $(Get-Credential) 
+	Connect to the specified edge server using the specified credentials
+	
+.EXAMPLE
+	Update-LyncFederatedDomains.ps1 | where { $_.Domain -match acme } | Update-LyncFederatedDomains.ps1 -FilePath .\path\to\update-federation.ps1
+	Parse event log entries for missing federation domains, find the ones that match 'acme' and create an update script.
+	
+.NOTES
+	Version 1.0.0 (2015-03-12)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Update-LyncFederatedDomains.html
+#>
+
 [CmdletBinding(DefaultParametersetName="console")]
 param(
 	[Parameter(ParameterSetName="gui")][switch]$GUI,

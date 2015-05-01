@@ -1,3 +1,32 @@
+<#
+.SYNOPSIS
+	Get a list of all numbers in Lync and on a ThinkTel SIP trunk.
+	
+.PARAMETER SipPilotNumber
+	10 digit SIP Trunk pilot number
+
+.PARAMETER Credential
+	PSCredential object (like returned from Get-Credential) for the SipPilotNumber
+
+.PARAMETER IncludeNumberTranslations
+	Include number translations in the report. This will significantly slow down the report.
+
+.OUTPUTS
+	For each number, either in Lync or on the SIP trunk, there's a PSCustomObject with the following properties:
+	Type, LineURI, DisplayName, SipAddress, Identity, OnTrunk, DID, City
+
+.EXAMPLE
+	Get-LyncNumbers.ps1 -SipPilotNumber 7005551212 | Export-Csv .\lync-numbers.csv -NoTypeInformation
+	Get all the numbers in Lync and on ThinkTel SIP Trunk 7005551212 and write them to .\lync-numbers.csv. You will be prompted for credentials for this SIP Trunk.
+	
+.NOTES
+	Version 1.0.0 (2015-03-12)
+	Written by Paul Vaillant
+	
+.LINK
+	http://paul.vaillant.ca/help/Get-LyncNumbers.html
+#>
+
 [CmdletBinding()]
 param(
 	[Parameter(Mandatory=$true,Position=0)][ValidateRange(1000000000,9999999999)][long]$SipPilotNumber,
