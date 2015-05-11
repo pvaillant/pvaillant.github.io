@@ -17,7 +17,7 @@ The inline documentation takes the form of a comment block (I like to use <# and
 
  * **.SYNOPSIS** – a brief explanation of what the script or function does
  * **.DESCRIPTION** – a more detailed explanation of what the script or function does
- * **.PARAMETER <name>** – an explanation of a specific parameter. You should have have one of these sections for each parameter the script or function uses.
+ * **.PARAMETER &lt;name&gt;** – an explanation of a specific parameter. You should have have one of these sections for each parameter the script or function uses.
  * **.EXAMPLE** – an example of how to use the script or function. You can have multiple .EXAMPLE sections if you want to provide more than one example.
  * **.INPUTS** - Description and types of objects that can be piped to the function or script
  * **.OUTPUTS** - Description and type of the objects that the cmdlet returns
