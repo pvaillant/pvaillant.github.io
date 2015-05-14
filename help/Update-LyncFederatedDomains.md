@@ -18,7 +18,7 @@ Updates allowed and blocked federated domains based on Edge event log entries.
 <tr valign="top"><td>EdgeServer</td><td>FQDN of edge server to connect to</td><td>false</td><td>false</td><td></td></tr>
 <tr valign="top"><td>Credential</td><td>Credentials to use to connect to edge server</td><td>false</td><td>false</td><td></td></tr>
 <tr valign="top"><td>InputObject</td><td></td><td>false</td><td>true (ByValue)</td><td></td></tr>
-</table>
+</tbody></table>
 
 ## Input Type
 Exactly the same as the outputs

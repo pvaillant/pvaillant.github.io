@@ -20,7 +20,7 @@ Classifies phone numbers based on the gold/silver/bronze classifications
 <tr valign="top"><td>RunSize</td><td></td><td>false</td><td>false</td><td>100</td></tr>
 <tr valign="top"><td>Slow</td><td>Uses the alternate method of of classifying numbers that's slower. This is for demonstration and shouldn't ever<br/>
 normally be used</td><td>false</td><td>false</td><td>False</td></tr>
-</table>
+</tbody></table>
 
 ## Notes
 Version 1.0.0 (2015-05-08)<br/>

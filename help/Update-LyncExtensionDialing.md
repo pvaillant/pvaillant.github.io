@@ -15,10 +15,10 @@ Updates a Lync dial plan to include normalization rules for all users with assig
 <tbody>
 <tr valign="top"><td>DialPlan</td><td>Identity of the DialPlan to update</td><td>false</td><td>false</td><td>Global</td></tr>
 <tr valign="top"><td>NormalizationRulePrefix</td><td>Prefix used to identify normalization rules to be managed</td><td>false</td><td>false</td><td>Ext</td></tr>
-</table>
+</tbody></table>
 
 ## Notes
-Version 1.0.0 (2015-04-17)<br/>
+Version 1.0.1 (2015-05-01)<br/>
 Written by Paul Vaillant
 
 ## Examples

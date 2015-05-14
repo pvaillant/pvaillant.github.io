@@ -16,7 +16,7 @@ Get a list of all numbers in Lync and on a ThinkTel SIP trunk.
 <tr valign="top"><td>SipPilotNumber</td><td>10 digit SIP Trunk pilot number</td><td>true</td><td>false</td><td>0</td></tr>
 <tr valign="top"><td>Credential</td><td>PSCredential object (like returned from Get-Credential) for the SipPilotNumber</td><td>false</td><td>false</td><td>$(Get-Credential)</td></tr>
 <tr valign="top"><td>IncludeNumberTranslations</td><td>Include number translations in the report. This will significantly slow down the report.</td><td>false</td><td>false</td><td>False</td></tr>
-</table>
+</tbody></table>
 
 ## Return Values
 For each number, either in Lync or on the SIP trunk, there's a PSCustomObject with the following properties:<br/>

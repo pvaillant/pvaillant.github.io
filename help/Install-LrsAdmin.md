@@ -21,7 +21,7 @@ Downloads and installs Lync Room System admin web interface, along with all depe
 <tr valign="top"><td>LrsFullAccessAdminGroupOU</td><td>Active Directory OU to create the group in. This must already exist.</td><td>false</td><td>false</td><td>CN=Users</td></tr>
 <tr valign="top"><td>PoolName</td><td>Name of the Lync pool the LrsAppUser will be enabled in. This will be auto-detected if it isn't specified.</td><td>false</td><td>false</td><td></td></tr>
 <tr valign="top"><td>SipDomain</td><td>SIP Domain to assign to LrsAppUser when it's enabled for Lync.</td><td>false</td><td>false</td><td></td></tr>
-</table>
+</tbody></table>
 
 ## Notes
 Version 1.0.0 (2015-01-05)<br/>

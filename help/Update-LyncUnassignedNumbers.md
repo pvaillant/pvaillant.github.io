@@ -18,7 +18,7 @@ Keeps unassigned number entries current with all numbers available on the SIP Tr
 <tr valign="top"><td>IncludeNumberTranslations</td><td>Include number translations in the report. This will significantly slow down the report.</td><td>false</td><td>false</td><td>False</td></tr>
 <tr valign="top"><td>Announcement</td><td>The announcement to use for any new unassigned number entries that are created</td><td>true</td><td>false</td><td></td></tr>
 <tr valign="top"><td>Force</td><td>Removes unused unassigned number entries</td><td>false</td><td>false</td><td>False</td></tr>
-</table>
+</tbody></table>
 
 ## Notes
 Version 1.0.0 (2015-04-10)<br/>

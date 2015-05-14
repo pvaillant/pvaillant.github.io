@@ -15,7 +15,7 @@ Get a list of the last X number of logins for a user
 <tbody>
 <tr valign="top"><td>UserUri</td><td>The SIP address of the user to return logins for</td><td>true</td><td>false</td><td></td></tr>
 <tr valign="top"><td>Last</td><td>Number of last logins to return</td><td>false</td><td>false</td><td>10</td></tr>
-</table>
+</tbody></table>
 
 ## Return Values
 For each login, there's a DataRow with the following properties:<br/>

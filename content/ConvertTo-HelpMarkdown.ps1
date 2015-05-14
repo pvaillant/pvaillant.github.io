@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
 	Gets the help content for a command name, or path to .ps1 file, and converts it to a markdown file.
-	
+
 .PARAMETER Command
 	Name of a cmdlet or path to a .ps1 file
 
@@ -13,16 +13,16 @@
 
 .PARAMETER Index
 	Specify to generate an index.md file with links to all the help files generated
-	
+
 .EXAMPLE
 	ls .\content\*.ps1 | ConvertTo-HelpMarkdown.ps1 -FrontMatter -Index
 	Generate markdown help for all the script files in the content directory of a Jekyll site
-	
+
 .NOTES
-	Version 1.0.0 (2015-05-01)
+	Version 1.0.1 (2015-05-14)
 	Written by Paul Vaillant
 	Inspired by Out-HTML http://poshcode.org/1612
-	
+
 .LINK
 	http://paul.vaillant.ca/help/ConvertTo-HelpMarkdown.html
 #>
@@ -54,7 +54,7 @@ BEGIN {
 					$i = $($i.ToString().Trim() -split "`n" | %{ $_.Trim() }) -Join $("<br/>" + [System.Environment]::NewLine)
 				}
 				if($i[0] -ne '<') {
-					# don't escape if it starts in html 
+					# don't escape if it starts in html
 					$i = EscapeHtml $i
 					# and restore and forced line breaks broken by the above escaping
 					$i = $i.Replace("&lt;br/&gt;" + [System.Environment]::NewLine, "<br/>" + [System.Environment]::NewLine)
@@ -78,7 +78,7 @@ PROCESS {
 		if($FrontMatter) {
 			"---","title : Get-Help $name","layout : layout","---","" | Append $fileName
 		}
-		
+
 		"# $name", $help.synopsis, "" | Append $fileName
 
 		if($help.Syntax) {
@@ -87,12 +87,12 @@ PROCESS {
 			$syntax = $syntax.Replace($path + "\","").Replace([Environment]::NewLine,"")
 			"## Syntax","<code>$(EscapeHtml($syntax.Trim()))</code>","" | Append $fileName
 		}
-		
+
 		if($help.Description) {
 			$description = $help.Description | Out-String
 			"## Detailed Description",$description,"" | Append $fileName
 		}
-		
+
 		if($help.parameters) {
 			"## Parameters" | Append $fileName
 			"<table class=""table table-condensed table-striped"">" | Append $fileName
@@ -102,27 +102,27 @@ PROCESS {
 				$desc = $($p.Description | Out-String).Trim()
 				"<tr valign=""top""><td>$($p.Name)</td><td>$desc</td><td>$($p.Required)</td><td>$($p.PipelineInput)</td><td>$($p.DefaultValue)</td></tr>" | Append $fileName
 			}
-			"</table>","" | Append $fileName
+			"</tbody></table>","" | Append $fileName
 		}
-		
+
 		# Input Type
 		if ($help.inputTypes) {
 			$inputTypes = $help.inputTypes | Out-String
 			"## Input Type",$inputTypes,"" | Append $fileName
 		}
-   
+
 		# Return Type
 		if ($help.returnValues) {
 			$returnValues = $help.returnValues | Out-String
 			"## Return Values",$returnValues,"" | Append $fileName
 		}
-		  
+
 		# Notes
 		if ($help.alertSet) {
 			$notes = $help.alertSet | Out-String
 			"## Notes",$notes,"" | Append $fileName
 		}
-   
+
 		# Examples
 		if ($help.examples) {
 			"## Examples","" | Append $fileName
