@@ -68,7 +68,7 @@ Next I want to make sure that if I pass a number on the command line, it returns
 
 <pre class="hljs powershell"><code>
 Context "When numbers are passed by the command line" {
-    It "identifies <Number> as <Class>" -TestCases $TestCases {
+    It "identifies &lt;Number> as &lt;Class>" -TestCases $TestCases {
         param($Number, $Class, $Reason)
 
         $c = & $cmd -Number $Number
