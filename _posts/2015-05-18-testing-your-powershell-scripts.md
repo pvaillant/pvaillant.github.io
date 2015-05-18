@@ -82,7 +82,7 @@ Since there's also a flag that will cause the script to return extra details, I 
 
 <pre class="hljs powershell"><code>
 Context "When numbers are passed by the command line with Details" {
-    It "identifies <Number> as <Class> because of <Reason>" -TestCases $TestCases {
+    It "identifies &lt;Number> as &lt;Class> because of &lt;Reason>" -TestCases $TestCases {
         param($Number, $Class, $Reason)
 
         $c = & $cmd -Number $Number -Details
@@ -98,7 +98,7 @@ Lastly, since my script can also takes input from the pipeline instead of the co
 
 <pre class="hljs powershell"><code>
 Context "When numbers are passed by the pipeline" {
-    It "identifies <Number> as <Class> because of <Reason>" -TestCases $TestCases {
+    It "identifies &lt;Number> as &lt;Class> because of &lt;Reason>" -TestCases $TestCases {
         param($Number, $Class, $Reason)
 
         $c = $Number | & $cmd
