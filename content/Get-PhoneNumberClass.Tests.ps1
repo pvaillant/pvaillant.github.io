@@ -102,4 +102,19 @@ Describe "Get-PhoneNumberClass" {
             }
         }
     }
+
+    Context "When a performance test is specified" {
+        $ExpectedAlgorithms = @("Fast", "Slow")
+        It "returns a list of algorithms and their total milliseconds" {
+            [array]$results = & $cmd -Test
+            $results.Length | Should Be $ExpectedAlgorithms.Length
+            foreach($algo in $ExpectedAlgorithms) {
+                $r = $results | where Name -eq $algo
+                # in the latest Pester this is the same as
+                # $r | Should Exist
+                $r | Should Not Be $null
+                $r.TotalMilliseconds | Should Match "^\d+\.\d+$"
+            }
+        }
+    }
 }

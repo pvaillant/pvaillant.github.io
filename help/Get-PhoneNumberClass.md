@@ -23,7 +23,7 @@ normally be used</td><td>false</td><td>false</td><td>False</td></tr>
 </tbody></table>
 
 ## Notes
-Version 1.0.0 (2015-05-08)<br/>
+Version 1.0.1 (2015-05-19)<br/>
 Written by Paul Vaillant<br/>
 Classifications come from @StaleHansen from his #msignite presenatation
 

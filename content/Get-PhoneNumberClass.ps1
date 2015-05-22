@@ -30,7 +30,7 @@
     Returns an object for each of the numbers with the Number, Class and Reason for classification
 
 .NOTES
-	Version 1.0.0 (2015-05-08)
+	Version 1.0.1 (2015-05-19)
 	Written by Paul Vaillant
     Classifications come from @StaleHansen from his #msignite presenatation
 
@@ -117,8 +117,8 @@ BEGIN {
         (?<Bronze_endsIn0>0)
     )$"
 
-    function ClassifySlowOptimized($number) {
-        Write-Verbose "Classifying $number (slow optimized)"
+    function ClassifySlow($number) {
+        Write-Verbose "Classifying $number (slow)"
         $class = ""
         $reason = ""
         for($i = 0; $i -lt $GOLD_RE.Length; $i++) {
@@ -152,22 +152,6 @@ BEGIN {
         @{Number = $number; Class = $class; Reason = $reason}
     }
 
-    function ClassifySlow($number) {
-        Write-Verbose "Classifying $number (slow)"
-        $class = "Ordinary"
-        $reason = ""
-        foreach($c in @("Gold","Silver","Bronze")) {
-            $CLASSES[$c].GetEnumerator() | foreach {
-                if($number -match $_.Value) {
-                    $class = $c
-                    $reason = $_.Key
-                    break
-                }
-            }
-        }
-        @{Number = $number; Class = $class; Reason = $reason}
-    }
-
     function ClassifyFast($number) {
         Write-Verbose "Classifying $number (fast)"
         $class = "Ordinary"
@@ -183,7 +167,7 @@ BEGIN {
     # a large number of piped values that would be dont once for each
     # value instead of how it's done below which is once per script call
     if($Script:Slow) {
-        new-alias -Scope script -Name Classify -Value ClassifySlowOptimized
+        new-alias -Scope script -Name Classify -Value ClassifySlow
     } else {
         new-alias -Scope script -Name Classify -Value ClassifyFast
     }
@@ -200,9 +184,6 @@ PROCESS {
 
         Measure-Command { foreach($n in $numbers) { ClassifySlow $n | out-null } } |
             select @{n='Name';e={'Slow'}},TotalMilliseconds
-
-        Measure-Command { foreach($n in $numbers) { ClassifySlowOptimized $n | out-null } } |
-            select @{n='Name';e={'Slow Optimized'}},TotalMilliseconds
     }
     elseif($PSCmdlet.ParameterSetName -eq "pipeline")
     {
