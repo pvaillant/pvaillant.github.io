@@ -10,6 +10,7 @@ These are the various scripts that I write and talk about on my blog. They're he
 There's also a help page for each one of these scripts online now: [Get-Help](/help).
 And continuous integration testing via AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/hbwcx5a0wv214nim)](https://ci.appveyor.com/project/pvaillant/pvaillant-github-io)
 
+ * [Convert-JpgToPdf.ps1](/content/Convert-JpgToPdf.ps1) (see [Create a PDF from Images with PowerShell](/2015/05/28/create-a-pdf-from-images-with-powershell.html))
  * [ConvertTo-HelpMarkdown.ps1](/content/ConvertTo-HelpMarkdown.ps1) (see [Document Your PowerShell Scripts](/2015/05/01/document-your-powershell-scripts.html))
  * [Get-LyncConferenceAdoption.ps1](/content/Get-LyncConferenceAdoption.ps1) (see [Measuring Lync Conference Adoption](/2015/03/03/measuring-lync-conference-adoption))
  * [Get-LyncLogins.ps1](/content/Get-LyncLogins.ps1) (see [Last Login for a SIP URI](/2015/02/22/last-login-for-a-sip-uri))

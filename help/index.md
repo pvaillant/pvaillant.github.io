@@ -5,6 +5,7 @@ layout : layout
 
 # Get-Help
 
+* [Convert-JpgToPdf](Convert-JpgToPdf.html)
 * [ConvertTo-HelpMarkdown](ConvertTo-HelpMarkdown.html)
 * [Get-LyncConferenceAdoption](Get-LyncConferenceAdoption.html)
 * [Get-LyncLogins](Get-LyncLogins.html)
