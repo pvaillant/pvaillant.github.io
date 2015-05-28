@@ -79,6 +79,8 @@ PROCESS {
 	}
 }
 
+</code></pre>
+
 One thing to note; I'm using the numeric value for [WdSaveFormat](https://msdn.microsoft.com/en-us/library/microsoft.office.interop.word.wdsaveformat(v=office.14).aspx) and [WdSaveOptions](https://msdn.microsoft.com/en-us/library/microsoft.office.interop.word.wdsaveoptions%28v=office.14%29.aspx) for testability. Specifically, I want to be able to test my scripts without having Word installed or the COM interop classes loaded.
 
 # Wrapping It Up
