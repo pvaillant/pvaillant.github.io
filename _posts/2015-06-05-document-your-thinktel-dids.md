@@ -17,13 +17,13 @@ Using previously shown PowerShell (see [Keeping Lync Unassigned Numbers Updated]
 $sipTrunkDidsUrl = "https://api.thinktel.ca/REST.svc/SipTrunks/{0}/Dids?PageFrom=0&PageSize=100000" -f $SipPilotNumber
 $didsList = Invoke-RestMethod -URI $sipTrunkDidsUrl -Credential $Credential -Method GET -ContentType "text/xml"
 if(-not $didsList -or -not $didsList.ArrayOfTerseNumber) {
-	Write-Error "Failed to load or parse DIDs on SIP Pilot $SipPilotNumber"
-	exit
+  Write-Error "Failed to load or parse DIDs on SIP Pilot $SipPilotNumber"
+  exit
 }
 
 $existingLabels = @{}
 $didsList.ArrayOfTerseNumber.TerseNumber | foreach {
-  $existingLabels.Add($\_.Number, $\_.Label)
+  $existingLabels.Add($_.Number, $_.Label)
 }
 
 </code></pre>
@@ -48,31 +48,31 @@ function AddCurrentLabel($telUri, $label) {
   }
 }
 Get-CsUser -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineURI, "User " + $\_.SipAddress)
+  AddCurrentLabel($_.LineURI, "User " + $_.SipAddress)
 }
 Get-CsUser -Filter {PrivateLine -ne $Null} | foreach {
-  AddCurrentLabel($\_.PrivateLine, "User " + $\_.SipAddress + " (private line)")
+  AddCurrentLabel($_.PrivateLine, "User " + $_.SipAddress + " (private line)")
 }
 Get-CsAnalogDevice -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineURI, "Analog Device " + $\_.DisplayName)
+  AddCurrentLabel($_.LineURI, "Analog Device " + $_.DisplayName)
 }
 Get-CsCommonAreaPhone -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineURI, "Common Area Phone " + $\_.DisplayName)
+  AddCurrentLabel($_.LineURI, "Common Area Phone " + $_.DisplayName)
 }
-Get-CsRgsWorkflow | ?{ $\_.LineURI } | foreach {
-  AddCurrentLabel($\_.LineURI, "RGS Workflow " + $\_.PrimaryAddress)
+Get-CsRgsWorkflow | ?{ $_.LineURI } | foreach {
+  AddCurrentLabel($_.LineURI, "RGS Workflow " + $_.PrimaryAddress)
 }
 Get-CsDialInConferencingAccessNumber -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineURI, "Dial In Conf Number " + $\_.DisplayName)
+  AddCurrentLabel($_.LineURI, "Dial In Conf Number " + $_.DisplayName)
 }
 Get-CsExUmContact -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineURI, "ExUmContact " + $\_.DisplayName)
+  AddCurrentLabel($_.LineURI, "ExUmContact " + $_.DisplayName)
 }
 Get-CsTrustedApplicationEndpoint -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineUri, "Trusted App Endpoint " + $\_.SipAddress)
+  AddCurrentLabel($_.LineUri, "Trusted App Endpoint " + $_.SipAddress)
 }
 Get-CsMeetingRoom -Filter {LineURI -ne $Null} | foreach {
-  AddCurrentLabel($\_.LineURI, "Meeting Room " + $\_.SipAddress)
+  AddCurrentLabel($_.LineURI, "Meeting Room " + $_.SipAddress)
 }
 
 </code></pre>
@@ -117,8 +117,8 @@ foreach($num in $newLabels.Keys) {
   $sipTrunkDidUrl = "https://api.thinktel.ca/REST.svc/SipTrunks/{0}/Dids/{1}" -f $SipPilotNumber,$num
   $d = Invoke-RestMethod -URI $sipTrunkDidUrl -Credential $Credential -Method GET -ContentType "application/json"
   if(-not $d -or $d.Number -ne $num) {
-		Write-Error "Failed to load information for DID $num"
-		continue
+    Write-Error "Failed to load information for DID $num"
+    continue
   }
 
   # update the DID label
@@ -126,7 +126,7 @@ foreach($num in $newLabels.Keys) {
 
   # now POST this back to $sipTrunkDidUrl
   if($PSCmdlet.ShouldProcess($num,"Update DID label")) {
-		Invoke-RestMethod -URI $sipTrunkDidUrl -Credential $Credential -Method "POST" -ContentType "application/json" -Body $d
+    Invoke-RestMethod -URI $sipTrunkDidUrl -Credential $Credential -Method "POST" -ContentType "application/json" -Body $d
   }
 }
 
