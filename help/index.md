@@ -16,3 +16,4 @@ layout : layout
 * [Update-LyncExtensionDialing](Update-LyncExtensionDialing.html)
 * [Update-LyncFederatedDomains](Update-LyncFederatedDomains.html)
 * [Update-LyncUnassignedNumbers](Update-LyncUnassignedNumbers.html)
+* [Update-ThinkTelDidLabels](Update-ThinkTelDidLabels.html)

@@ -21,3 +21,4 @@ And continuous integration testing via AppVeyor: [![Build status](https://ci.app
  * [Update-LyncExtensionDialing.ps1](/content/Update-LyncExtensionDialing.ps1) (see [Managing Extensions in Lync Dial Plans](/2015/04/17/managing-extensions-in-lync-dial-plans.html))
  * [Update-LyncFederatedDomains.ps1](/content/Update-LyncFederatedDomains.ps1) (see [Keeping Lync Federated Domains Up To Date](/2015/03/13/keeping-lync-federated-domains-up-to-date.html))
  * [Update-LyncUnassignedNumbers.ps1](/content/Update-LyncUnassignedNumbers.ps1) (see [Keeping Lync Unassigned Numbers Updated](/2015/04/10/keeping-lync-unassigned-numbers-updated.html))
+ * [Update-ThinkTelDidLabels.ps1](/content/Update-ThinkTelDidLabels.ps1) (see [Document Your Thinktel DIDs](/2015/06/05/document-your-thinktel-dids.html))
