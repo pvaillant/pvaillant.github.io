@@ -17,7 +17,7 @@
 	This will update the RedmondOffice dial plan. 
 	
 .NOTES
-	Version 1.0.1 (2015-05-01)
+	Version 1.0.2 (2015-10-01)
 	Written by Paul Vaillant
 	
 .LINK
@@ -122,12 +122,12 @@ $newExts | foreach {
 
 # set-csvoicenormalizationrule w/ date as description
 $setExts | foreach {
-	$rule = $currentKeys[$_][1]
+	$rule = $currentExts[$_][1]
 	Set-CsVoiceNormalizationRule -Identity $rule -Translation $assignedExts[$_] -Description "Updated $batch" -Confirm:$false
 } | Out-Null
 
 # remove-csvoicenormalizationrule
 $oldExts | foreach {
-	$rule = $currentKeys[$_][1]
+	$rule = $currentExts[$_][1]
 	Remove-CsVoiceNormalizationRule -Identity $rule -Confirm:$false
 } | Out-Null
