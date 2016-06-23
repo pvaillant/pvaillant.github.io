@@ -17,7 +17,7 @@
 	This will update the RedmondOffice dial plan. 
 	
 .NOTES
-	Version 1.0.3 (2016-06-22)
+	Version 1.0.4 (2016-06-22)
 	Written by Paul Vaillant
 	
 .LINK
@@ -57,11 +57,13 @@ $users | where LineURI -match ';ext=(\d+)' | foreach {
 	elseif($assignedExts.ContainsKey($ext)) {
 		# this is the second time we've seen this extension
 		# create a list of duplicates; the first one and this one
-		$dups = new-object 'system.collections.generic.list[string]' @($assignedExts[$ext],$line)
+		$dups = new-object 'system.collections.generic.list[string]'
+		$dups.Add($assignedExts[$ext])
+		$dups.Add($line)
 		# save the duplicates
 		$assignedDups.Add($ext, $dups)
 		# and remove this extension from the unique list
-		$assignedExts.Remove($ext)
+		$assignedExts.Remove($ext) | Out-Null
 	}
 	else {
 		# this is the first time we've seen this extension
