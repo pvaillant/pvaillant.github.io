@@ -17,7 +17,7 @@
 	This will update the RedmondOffice dial plan. 
 	
 .NOTES
-	Version 1.0.2 (2015-10-01)
+	Version 1.0.3 (2016-06-22)
 	Written by Paul Vaillant
 	
 .LINK
@@ -42,13 +42,13 @@ if(!$(Get-CsDialPlan $DialPlan -ErrorAction SilentlyContinue -Verbose:$false)) {
 ## Read the extensions assigned to users
 ###############################################################################
 $users = Get-CsUser -Filter {EnterpriseVoiceEnabled -eq $true}
-$assignedDups = new-object 'system.collections.generic.dictionary[int,system.collections.generic.list[string]]'
-$assignedExts = new-object 'system.collections.generic.dictionary[int,string]'
+$assignedDups = new-object 'system.collections.generic.dictionary[string,system.collections.generic.list[string]]'
+$assignedExts = new-object 'system.collections.generic.dictionary[string,string]'
 # for every user who has an extension assigned
-$users | where LineURI -match ';ext=' | foreach {
+$users | where LineURI -match ';ext=(\d+)' | foreach {
 	$sip = $_.SipAddress
 	$line = $_.LineURI.Substring(4) # remove tel:
-	[int]$ext = $line -split ';ext=' | select -last 1
+	$ext = $($line -split ';' | where { $_ -match '^ext=' }) -split '=' | select -last 1
 	# check if we've seen this extension already
 	if($assignedDups.ContainsKey($ext)) {
 		# seen this before multiple times
@@ -83,9 +83,9 @@ if($assignedDups.Count -gt 0) {
 ## Read the current normalization rules
 ###############################################################################
 $rules = Get-CsVoiceNormalizationRule -Identity $DialPlan | where Name -match $NormalizationRulePrefix
-$currentExts = new-object 'system.collections.generic.dictionary[int,string[]]'
+$currentExts = new-object 'system.collections.generic.dictionary[string,string[]]'
 $rules | foreach {
-	[int]$ext = $_.Pattern.Substring(1, $_.Pattern.Length - 2) # remove leading ^ and trailing $
+	$ext = $_.Pattern.Substring(1, $_.Pattern.Length - 2) # remove leading ^ and trailing $
 	$line = $_.Translation
 	$identity = $_.Identity
 	$currentExts.Add($ext, [string[]]@($line,$identity))
