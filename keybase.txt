@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/paulvaillant
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://paul.vaillant.ca
+  * I am paulvaillant (https://keybase.io/paulvaillant) on keybase.
+  * I have a public key with fingerprint 12F9 3CCE 648A 8351 6362  E010 0AAA 705E A57C 4E49
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101423a57dbae380cea9e32a020c0595b5ceb56fa8b874d7a13a529f9807f438cf90a",
+            "fingerprint": "12f93cce648a83516362e0100aaa705ea57c4e49",
+            "host": "keybase.io",
+            "key_id": "0aaa705ea57c4e49",
+            "kid": "0101423a57dbae380cea9e32a020c0595b5ceb56fa8b874d7a13a529f9807f438cf90a",
+            "uid": "dd935933a55b2bcfd6fd625d4434e200",
+            "username": "paulvaillant"
+        },
+        "service": {
+            "hostname": "paul.vaillant.ca",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1479406950,
+    "expire_in": 157680000,
+    "prev": "fb6db7c66945784db0f34873c728c0af5695a13fc0b5ca93a7ad8c2c2d38fa76",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIlAnicrZJbSFRBGMfXNK3tQmEvag9xypBYt9lz5twWN8nA6jG6aCYtc+bMcQ8e
+96x7s3XdLF/Ml7wgGVFteCmpiNKoyIe0whRJigor6KEyVBDpghRElzlWEPTaMDDM
+fL///7sw91ek2uwpRa2p6170d8VTxobORmyl+fNanFFMNca440wlWTiIoZJQ2Fup
+q4ybAS7ggiyHeFFVEOEkgAmSCcciwAIMeJlXeEwUXtCQpEgiVEXkojAra7IERA1y
+EtZkgBgHo+n+ChIMBHV/mNq6WE3mMCYClJDE8S6BE1hCcwGEkAh4QvNhSKBMhT4z
+ZClocQoKEadu0jd68f4q71/+P9cdWbBTVZnjZY4ivMIqWFMFullehZCDhAXAAkMk
+6EdVhNIBFDGiSDcMRJtNOBgaieqYWMO1uvmLcv7BnNhKFgiaYRObBo36wuGA2xKH
+YwGLriGK97ePV9H9Kh0nFURJMKSbfsbtoiQO65axC4oyBILMAwdDDgX0IPHqFsGL
+ggTostKQKLXUFEFVRCwIMuRFCaoK0DgoiRwWWQkDpPHUg45Fw4AOC8kcEpEqYRaz
+KidpSBQYq7Nqv8m4IS0TVVDLkF7hR+FIkDCJu4PlabYUuy198SLrm9nsS1f9+Xz7
+BzJ+mHl9RR2DM11l2U8f1yvGbNLb2vp92vcos7HnefupbZN1vgMNaSi6+ZWxcdNU
+5165+0JevWd9omA6oyvH6Slv3Hmkx3l4ieRsznwNh4tLNuQX3ExW+86P3Gi7nKOu
+eZN2ZsB+elfWnPPg18LSnNzuBjN3meOeunJi7tiOpnevsxO1g/uuFOeXTw32KW+2
+3C7s1buzozNVR764zCgk8/btk4Gr5xKx1LUvH451vC09asTN8Ytjz76dqN03MXyn
+5cnGkfT6WEtSu9XuCTnet8j2kg/Ctam2hs5dJZ7rNUVJW9Mlo2zPUFb6xwd1J0dH
+j8f7xpdv/dS7e3btilj/as/n5p+0NELO
+=yNRh
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/paulvaillant
+
+==================================================================
